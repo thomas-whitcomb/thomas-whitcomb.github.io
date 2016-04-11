@@ -27,9 +27,11 @@ $(document).ready(function(){
 		//OAuth.redirect('twitter', 'http://localhost:8080')
 		OAuth.initialize('XFW3J69pI4WCYLZsRuDEYhcSFFU')
 		//OAuth.callback('twitter').done(function(result) {
+		console.log('here1')
 		OAuth.popup('twitter').done(function(result) {
+			console.log('here2')
 		    result.get('1.1/search/tweets.json?q=' + keyword + '&result_type=' + resultType + '&count=' + tweetNum).done(function(resp){
-		    	//console.log(resp)
+		    	console.log('here3')
 		    	resp.statuses.forEach(function(obj){
 		    		tweetCheck(obj)
 		    	})
