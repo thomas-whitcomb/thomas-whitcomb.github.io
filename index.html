@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #00b3b3;
+    }
+    .container {
+      clear: both;	
+      align-items: center;
+      margin: 10px;
+    }
+    .box {
+      min-height: 80px;
+      width: 400px;
+      padding: 10px;
+      border-radius: 25px;
+      border: 2px solid #4099FF;
+      display: block;
+      font-family: "Helvetica Neue";
+      margin: 10px;
+      background-color: white
+    }
+    .search-head{
+      margin: 10px;
+    }
+    .search-box{
+      margin-left: 10px;
+    }
+    .profile-img {
+    	float: left;
+    	position: relative;
+    	padding: 5px;
+    	height: 32px;
+    	width: 32px;
+    }
+    .profile-name{
+    	font-size: 19px;
+    	text-decoration: none;
+    	font-weight: 250px;
+    	color: black;
+    }
+    .profile-handle{
+    	font-size: 14px;
+    	text-decoration: none;
+    	color: #767272;
+    }
+  </style>
+<!-- fkfj -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="app.js"></script>
+  <script src="oauth.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+</head>
+<body>
+	<marquee class="search-head">Search Tweets by Keyword</marquee>
+  <input class="search-box" type="text" placeholder="type any keyword...">
+  <button class="find-tweets-button">Search!</button>
+
+
+  <div class="container">
+  	<ol class="tweet-list"></ol>
+  </div>
+
+  <script id="row" type="text/x-handlebars-template">
+    <li class="box" >
+    <img class="profile-img" src={{profImg}}>
+    <a class="profile-name" href={{profURL}}>{{name}} </a> 
+    <a class="profile-handle" href={{profURL}}>{{screenName}}</a> <br>
+    <p>{{twtText}}</p>
+    </li>
+
+  </script>
+
+</body>
+</html>
